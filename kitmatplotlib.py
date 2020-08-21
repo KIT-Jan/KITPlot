@@ -497,6 +497,8 @@ class KITMatplotlib():
                             if item in self.markers:
                                 return item
                         if isinstance(item, int):
+                            if item == 0:
+                                return "None"
                             return list(self.markers.keys())[item]
                         raise Exception
         except:

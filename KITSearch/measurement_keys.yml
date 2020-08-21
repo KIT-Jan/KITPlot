@@ -22,3 +22,6 @@ pinhole:
 i_leak:
     - strip
     - current
+i_gcd:
+    - lv
+    - current
