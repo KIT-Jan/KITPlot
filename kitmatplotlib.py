@@ -370,6 +370,9 @@ class KITMatplotlib():
         if self.logY:
             print(self.logY)
             ax_obj.semilogy()
+            #adjust x and y number size to ensure better visibiliy... has to be changed
+            ax_obj.get_yaxis().set_tick_params(labelsize=15)
+            ax_obj.get_xaxis().set_tick_params(labelsize=15)
             if isinstance(self.logY, list):
                 ax_obj.set_yticks(self.logY)
                 ax_obj.get_yaxis().set_tick_params(which='minor', size=0)
@@ -397,7 +400,7 @@ class KITMatplotlib():
                         y2.append(y + _max)
 
                 ax_obj.fill_between(
-                    table[0], y1, y2, alpha=0.3, lineWidth=0,
+                    table[0], y1, y2, alpha=0.1, lineWidth=0,
                     color=self.getColor(i))
             elif len(table) != 4 and self.err in [True, "filled"]:
                 self.log.warning("Can't find x- and y-errors in file. Request "
